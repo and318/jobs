@@ -34,11 +34,12 @@ function clean() {
 
     //Usando async/wait 
     async function getJobs(type, location) {
-        $('#lista_jobs').empty();
+        
         try {
             const response = await axios.get(`${BASE_URL}description=${tech}&location=${place}`);
-            response.data.forEach((job) => {
-                listJob(job);
+            $('#lista_jobs').empty();
+            response.data.forEach((job,index) => {
+                listJob(job,index);
             })
             console.log(response);
         } catch (error) {
@@ -48,10 +49,13 @@ function clean() {
 }
 function imgError(image) {
     image.onerror = "";
-    image.src = "/images/logo.png";
+    image.src = "/images/300.jpg";
     return true;
 }
-function listJob(job) {
+
+function listJob(job,index) {
+
+
     var content = `
     
     
@@ -64,10 +68,10 @@ function listJob(job) {
                             <div class="card-body">
                                 <h5 class="card-title">${job.title}</h5>
                                 <span>${job.location}</span> <span>${job.type}</span>
-                                <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#${job.id}">
+                                <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#${index}">
                                 Ver más
                                 </button>
-                                <div class="modal fade" id="${job.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
