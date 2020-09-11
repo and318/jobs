@@ -28,6 +28,15 @@ app.use(
     credentials: true,
   })
 );
+//include Bootstrap
+app.use('/assets', [
+  express.static(__dirname + '/node_modules/bootstrap/dist/js/'),
+  express.static(__dirname + '/node_modules/bootstrap/dist/css/'),
+]);
+//include axios
+app.use('/assets', [
+  express.static(__dirname + '/node_modules/axios/dist'),
+]);
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
