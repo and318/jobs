@@ -64,8 +64,8 @@ function listJob(job) {
                             <div class="card-body">
                                 <h5 class="card-title">${job.title}</h5>
                                 <span>${job.location}</span> <span>${job.type}</span>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#${job.id}">
-                                Launch demo modal
+                                <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#${job.id}">
+                                Ver más
                                 </button>
                                 <div class="modal fade" id="${job.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -82,17 +82,13 @@ function listJob(job) {
                                     </small>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
-                                <a class="btn btn-primary btn-small" data-toggle="collapse" href="#${job.id}"
-                                        role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        Ver más
-                                    </a>
-                                    
+                               
                                 
                                 <div class="collapse" id="${job.id}">
                                     <small>
