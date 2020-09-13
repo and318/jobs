@@ -32,6 +32,7 @@ function clean() {
     console.log(place);
 
 
+
     //Usando async/wait 
     async function getJobs(type, location) {
         
@@ -50,7 +51,7 @@ function clean() {
 }
 function imgError(image) {
     image.onerror = "";
-    image.src = "/images/300.jpg";
+    image.src = "/images/logo.png";
     return true;
 }
 
@@ -59,24 +60,32 @@ function listJob(job,index) {
 
 
     var content = `
-    <div class="card mb-3 ml-3" >
+    <div class="card mb-3 ml-3">
     <div class="row no-gutters">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
             <img src="${job.company_logo}" onerror="imgError(this);" class="card-img" alt="logo">
         </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">${job.title}</h5>
-                    <span>${job.location}</span> <span>${job.type}</span>
-                    <button type="button" class="btn btn-outline-primary btn-small" data-toggle="modal" data-target="#asdf${index}">
-  Ver más
-</button>
-                    <p class="card-text reduce"><small><a href="${job.company_url}">${job.company_url}</a></small></p>
-                    <p class="card-text"><small class="text-muted">${job.created_at}</small></p>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${job.title}</h5>
+                <div class="info">
+                    <span><i class="fas fa-map-marker-alt"></i> ${job.location} </span> <span> <i
+                            class="fas fa-business-time"></i> ${job.type}</span>
                 </div>
-
+                <button type="button" class="btn btn-outline-primary btn-little" data-toggle="modal"
+                    data-target="#asdf${index}">
+                    Ver más
+                </button>
+                <p class="card-text ">
+                <a href="${job.company_url}" target="_blank"><small>${job.company_url}</small></a></p>
+                <p class="card-text">
+                
+                ${job.how_to_apply}
+                </p>
             </div>
+
         </div>
+    </div>
 </div>
     `
     $(`#lista_jobs`).append(content);

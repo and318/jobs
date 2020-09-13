@@ -1,8 +1,35 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+body {
+  
+  font-family: 'Lato', sans-serif;
+}
+.top {
+  color: white;
+}
+.title {
+
+  text-align:center;
+  font-weight: 700;
+}
+.title small {
+  font-size: 15px;
+  font-weight: 300;
+}
+.card-body {
+  font-size: 12px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.btn-little{
+  padding: 5px 10px;
+font-size: 12px;
+line-height: 10px;
+font-weight: 300;
+margin: 10px 0;
+}
 a {
   color: #00B7FF;
 }
